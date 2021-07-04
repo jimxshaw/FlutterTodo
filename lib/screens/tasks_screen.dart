@@ -8,7 +8,8 @@ class TasksScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orangeAccent,
       body: Container(
-        padding: EdgeInsets.only(top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
+        padding:
+            EdgeInsets.only(top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
         child: Column(
           children: [
             CircleAvatar(
@@ -20,7 +21,17 @@ class TasksScreen extends StatelessWidget {
               backgroundColor: Colors.white,
               radius: 30.0,
             ),
-            Text('FlutterToDo'),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              'ToDo',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 50.0,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
           ],
         ),
       ),
