@@ -9,7 +9,7 @@ class TasksScreen extends StatelessWidget {
       backgroundColor: Colors.orangeAccent,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orangeAccent,
-        onPressed: () {  },
+        onPressed: () {},
         child: Icon(
           Icons.add,
         ),
@@ -63,6 +63,13 @@ class TasksScreen extends StatelessWidget {
                     20.0,
                   ),
                 ),
+              ),
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: Text('This is a task'),
+                  ),
+                ],
               ),
             ),
           ),
