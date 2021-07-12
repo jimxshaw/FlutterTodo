@@ -28,6 +28,9 @@ class _TasksScreenState extends State<TasksScreen> {
                     setState(() {
                       tasks.add(Task(name: newTaskTitle));
                     });
+                    // Pop off the current context to remove the
+                    // bottom sheet after adding a new task.
+                    Navigator.pop(context);
                   }));
         },
         child: Icon(
