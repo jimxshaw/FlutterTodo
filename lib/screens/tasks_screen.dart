@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertodo/models/task.dart';
+import 'package:fluttertodo/models/task_data.dart';
 import 'package:fluttertodo/screens/add_task_screen.dart';
 import 'package:fluttertodo/widgets/tasks_list.dart';
+import 'package:provider/provider.dart';
 
 class TasksScreen extends StatefulWidget {
   @override
@@ -9,7 +11,6 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +21,9 @@ class _TasksScreenState extends State<TasksScreen> {
           showModalBottomSheet(
               context: context,
               builder: (context) => AddTaskScreen((newTaskTitle) {
-                    setState(() {
-                      tasks.add(Task(name: newTaskTitle));
-                    });
+                    // setState(() {
+                    //   tasks.add(Task(name: newTaskTitle));
+                    // });
                     // Pop off the current context to remove the
                     // bottom sheet after adding a new task.
                     Navigator.pop(context);
@@ -62,7 +63,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   ),
                 ),
                 Text(
-                  '${tasks.length} Tasks',
+                  '${Provider.of<TaskData>(context).tasks.length} Tasks',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -81,7 +82,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   topRight: Radius.circular(20.0),
                 ),
               ),
-              child: TasksList(tasks),
+              child: TasksList(),
             ),
           ),
         ],
