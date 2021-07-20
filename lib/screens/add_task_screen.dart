@@ -45,8 +45,8 @@ class AddTaskScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                final task = Task(name: newTaskTitle);
-                Provider.of<TaskData>(context).tasks.add(task);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle);
                 Navigator.pop(context);
               },
               style: ButtonStyle(
