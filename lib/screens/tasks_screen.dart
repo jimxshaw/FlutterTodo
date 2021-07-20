@@ -13,15 +13,7 @@ class TasksScreen extends StatelessWidget {
         backgroundColor: Colors.orangeAccent,
         onPressed: () {
           showModalBottomSheet(
-              context: context,
-              builder: (context) => AddTaskScreen((newTaskTitle) {
-                    // setState(() {
-                    //   tasks.add(Task(name: newTaskTitle));
-                    // });
-                    // Pop off the current context to remove the
-                    // bottom sheet after adding a new task.
-                    Navigator.pop(context);
-                  }));
+              context: context, builder: (context) => AddTaskScreen());
         },
         child: Icon(
           Icons.add,
